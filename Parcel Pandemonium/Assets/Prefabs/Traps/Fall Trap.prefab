@@ -353,7 +353,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 76984fe8c7cfd4c4fb8c2995d0c3ab86, type: 2}
+  - {fileID: 2100000, guid: dc9c28e1af260b1458cbe35974ac323a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -411,7 +411,6 @@ MonoBehaviour:
   startPoint: {fileID: 166097355389624889}
   endPoint: {fileID: 1224568272649215149}
   movementSpeed: 2
-  direction: 1
 --- !u!1001 &2824008842184232189
 PrefabInstance:
   m_ObjectHideFlags: 0
