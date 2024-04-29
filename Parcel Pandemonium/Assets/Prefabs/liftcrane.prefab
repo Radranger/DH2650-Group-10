@@ -14047,7 +14047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7317262301722632986}
   m_Layer: 0
-  m_Name: lift crane
+  m_Name: liftcrane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
