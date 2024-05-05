@@ -8,6 +8,7 @@ public class OutBounds : MonoBehaviour
 
         private void OnTriggerEnter(Collider other)
         {
+        Debug.Log("Trigger entered by: " + other.name);
             if (other.CompareTag("Player"))
             {
                 Debug.Log("Player died!");
@@ -15,9 +16,9 @@ public class OutBounds : MonoBehaviour
             }
         }
 
-        private void RespawnPlayer(GameObject player)
+        private void RespawnPlayer(GameObject Player)
         {
-            player.transform.position = respawnPoint.position;
-            player.transform.rotation = respawnPoint.rotation;
+            Player.transform.position = respawnPoint.position;
+            Player.transform.rotation = respawnPoint.rotation;
         }
 }
