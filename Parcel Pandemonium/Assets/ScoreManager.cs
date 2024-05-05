@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int playerScore = 0;
+    public int playerScore;
     public int pizzaTemperature = 100; // Start with hot pizza att 100
     public float timeElapsed = 0f;
     public float temperatureUpdateTime = 1f; // Update temperature every 1 seconds
@@ -51,6 +51,8 @@ public class ScoreManager : MonoBehaviour
         playerScore += temperaturePoints;
         pizzasDelivered++;
 
+        UpdateUIText();
+
         if (pizzasDelivered >= totalPizzas)
         {
             isGameOver = true;
@@ -87,7 +89,6 @@ public class ScoreManager : MonoBehaviour
         {
             scoreText.text = "Score: " + playerScore.ToString();
         }
-
 
         if (temperatureText != null)
         {
