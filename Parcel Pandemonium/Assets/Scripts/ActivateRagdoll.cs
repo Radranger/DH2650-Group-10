@@ -9,6 +9,9 @@ public class ActivateRagdoll : MonoBehaviour
     private Vector3[] currentRotations;
     private Rigidbody[] ragdollRigidbodies;
     // when colliding with an object, activate the ragdoll
+    public PizzaHealth pizzaHealth; // Reference to PizzaHealth script
+
+
 
     private void Start() {
         // Deactivate the ragdoll by disabling all Rigidbody components in the hierarchy
@@ -24,7 +27,9 @@ public class ActivateRagdoll : MonoBehaviour
 
     }
     private void OnTriggerEnter(Collider other) {
+
         Debug.Log("Collision detected");
+
         ragdollRigidbodies = playerRig.GetComponentsInChildren<Rigidbody>();
         for (int i = 0; i < ragdollRigidbodies.Length; i++)
         {
@@ -37,6 +42,9 @@ public class ActivateRagdoll : MonoBehaviour
             rb.isKinematic = false;
             gameObject.GetComponent<PlayerMovement>().enabled = false;
         }
+
+        pizzaHealth.TakeDamage(1);
         gameObject.GetComponent<RespawnDriver>().Respawn(currentPositions, currentRotations);
+
     }
 }
