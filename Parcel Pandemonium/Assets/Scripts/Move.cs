@@ -9,38 +9,30 @@ public class Move : MonoBehaviour
     public Transform endPoint;   // Transform of the ending point
     public float movementSpeed = 2.0f; // Speed of movement
 
-    public float direction = 1; // Direction of movement
+    private bool direction = true; // Direction of movement
 
-    private bool movingToEnd = true; // Indicates whether the platform is moving towards the end point
-
-    public void changeDirection(){
-        direction *= -1;
+    public void ChangeDirection(){
+        direction = !direction;
     }
     // Update is called once per frame
     void Update()
     {
-        // Determine the target position based on the current direction of movement
-        Vector3 targetPosition = movingToEnd ? endPoint.position : startPoint.position;
-
-        // Calculate the movement step
-        float step = movementSpeed * Time.deltaTime * direction;
-
-        // Move the platform towards the target position
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
-
-        // Check if the platform has reached the target position
-        if (Vector3.Distance(transform.position, targetPosition) < 0.001f)
+        // Moves the platform between the start and end points based on diraction
+        if (direction)
         {
-            // If the platform has reached the end point, switch direction
-            if (movingToEnd)
-            {
-                movingToEnd = false;
-            }
-            // If the platform has reached the start point, switch direction
-            else
-            {
-                movingToEnd = true;
-            }
+            transform.position = Vector3.MoveTowards(transform.position, endPoint.position, movementSpeed * Time.deltaTime);
         }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, startPoint.position, movementSpeed * Time.deltaTime);
+        }
+
+        // Changes direction when reaching the end point
+        if (transform.position == endPoint.position || transform.position == startPoint.position)
+        {
+            direction = !direction;
+        }
+
+
     }
 }

@@ -17,9 +17,7 @@ public class BallTrapTrigger : MonoBehaviour
 
     void OnCollisionEnter(Collision other) {
         Debug.Log("Collision detected");
-        if (other.gameObject.tag == "Player")
-        {
-            Destroy(ballHolder);
-        }
+
+        Destroy(ballHolder);
     }
 }
