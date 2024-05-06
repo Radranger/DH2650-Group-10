@@ -32509,54 +32509,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 71764334832975543, guid: 3edd492a8a6a933439dd4d4d21e945a5, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 307825681498288221, guid: 3edd492a8a6a933439dd4d4d21e945a5, type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 345256579261375929, guid: 3edd492a8a6a933439dd4d4d21e945a5, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 389938720436706000, guid: 3edd492a8a6a933439dd4d4d21e945a5, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1160425381129405217, guid: 3edd492a8a6a933439dd4d4d21e945a5, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839713700406170166, guid: 3edd492a8a6a933439dd4d4d21e945a5, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4876201031730405163, guid: 3edd492a8a6a933439dd4d4d21e945a5, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5610164325356612394, guid: 3edd492a8a6a933439dd4d4d21e945a5, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7573577739569218214, guid: 3edd492a8a6a933439dd4d4d21e945a5, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: -3385975067227041016, guid: 520573af86221ed4db43b590a337fb63, type: 3}
-      propertyPath: minPitch
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: -373422169581133779, guid: 520573af86221ed4db43b590a337fb63, type: 3}
-      propertyPath: m_Volume
-      value: 0.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 1902394196543217814, guid: 520573af86221ed4db43b590a337fb63, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 72
-      objectReference: {fileID: 0}
     - target: {fileID: 2240737816261091875, guid: 520573af86221ed4db43b590a337fb63, type: 3}
       propertyPath: m_LocalPosition.x
       value: -32.9
@@ -32597,25 +32549,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2974652307952493329, guid: 520573af86221ed4db43b590a337fb63, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6294067203753063591, guid: 520573af86221ed4db43b590a337fb63, type: 3}
       propertyPath: m_Name
       value: Player vehicle V3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6294067203753063591, guid: 520573af86221ed4db43b590a337fb63, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6413517692724108305, guid: 520573af86221ed4db43b590a337fb63, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7810829499320088393, guid: 520573af86221ed4db43b590a337fb63, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
