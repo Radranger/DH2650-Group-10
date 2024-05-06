@@ -3218,12 +3218,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2240737816261091875}
+  - component: {fileID: 3176414033176863379}
   - component: {fileID: 1902394196543217814}
   - component: {fileID: 1829158668659561707}
   - component: {fileID: 307825681498288221}
   - component: {fileID: -6532780137804940717}
   - component: {fileID: -373422169581133779}
   - component: {fileID: -3385975067227041016}
+  - component: {fileID: -9043591858888585445}
+  - component: {fileID: 936438838647049908}
   m_Layer: 0
   m_Name: Player vehicle V3
   m_TagString: Player
@@ -3248,6 +3251,27 @@ Transform:
   - {fileID: 9157026724612079094}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &3176414033176863379
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294067203753063591}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 72
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.59, y: 1.58, z: 1.85}
+  m_Center: {x: 0, y: 1, z: -6.08}
 --- !u!65 &1902394196543217814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3261,9 +3285,9 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 96
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3306,7 +3330,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1000
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -3318,11 +3342,11 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!82 &-373422169581133779
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3435,6 +3459,34 @@ MonoBehaviour:
   maxSpeed: 5
   minPitch: 0.5
   maxPitch: 1.5
+--- !u!114 &-9043591858888585445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294067203753063591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ffc77c0dde18d42b4d6d3025b3479c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnTime: 5
+  playerRig: {fileID: 7067649412712989512}
+  hips: {fileID: 489199015563914106}
+  veichle: {fileID: 6413517692724108305}
+--- !u!114 &936438838647049908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294067203753063591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75eef86845a04a842b5abec7223cb1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6413517692724108305
 GameObject:
   m_ObjectHideFlags: 0
@@ -3446,6 +3498,7 @@ GameObject:
   - component: {fileID: 149574120866545758}
   - component: {fileID: 581452146123103021}
   - component: {fileID: 8761032959536598748}
+  - component: {fileID: 66970537307787757}
   m_Layer: 6
   m_Name: Vehicle01_Vespa
   m_TagString: Untagged
@@ -3522,6 +3575,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &66970537307787757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6413517692724108305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34e48cb24df74d4496a1cf329d94889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6434308108158586346
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class ThrowObject : MonoBehaviour
         {
             return;
         }
-
+        gameObject.GetComponent<Move>().enabled = false;
         isThrown = true;
         Debug.Log("Throwing object");
         throwableObject.GetComponent<Rigidbody>().isKinematic = false;
@@ -43,7 +43,7 @@ public class ThrowObject : MonoBehaviour
         throwableObject.transform.GetChild(0).GetComponent<Rigidbody>().rotation = Quaternion.Euler(0, 0, 0);
         throwableObject.transform.GetChild(0).GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         throwableObject.transform.GetChild(1).transform.localPosition = new Vector3(0, -2, 0);
-
+        gameObject.GetComponent<Move>().enabled = true;
         isThrown = false;
         
     }

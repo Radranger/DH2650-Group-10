@@ -4163,7 +4163,6 @@ MonoBehaviour:
   startPoint: {fileID: 1465589574}
   endPoint: {fileID: 1411921554}
   movementSpeed: 3
-  direction: 1
 --- !u!65 &279974548
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20294,7 +20293,6 @@ MonoBehaviour:
   startPoint: {fileID: 706809630}
   endPoint: {fileID: 1192516345}
   movementSpeed: 3
-  direction: 1
 --- !u!65 &1116570605
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35195,6 +35193,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.58
       objectReference: {fileID: 0}
+    - target: {fileID: 1902394196543217814, guid: 520573af86221ed4db43b590a337fb63, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 2240737816261091875, guid: 520573af86221ed4db43b590a337fb63, type: 3}
       propertyPath: m_LocalPosition.x
       value: -32.9
@@ -38790,7 +38792,6 @@ MonoBehaviour:
   startPoint: {fileID: 1067642836}
   endPoint: {fileID: 385437965}
   movementSpeed: 2
-  direction: 1
 --- !u!82 &1869385979
 AudioSource:
   m_ObjectHideFlags: 0

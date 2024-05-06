@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 4475132159974224676}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.73, y: -3, z: -2.9478}
+  m_LocalPosition: {x: 19.13, y: -3, z: -2.9478}
   m_LocalScale: {x: 0.3, y: 0.1, z: 11.532826}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -273,7 +273,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -504,7 +504,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -520,9 +520,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden platform
       objectReference: {fileID: 0}
+    - target: {fileID: 1292393581502462058, guid: e8622fa84fbcdc04ea6979730d526433, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1919749165940908752, guid: e8622fa84fbcdc04ea6979730d526433, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.0900002
+      value: -11.7
       objectReference: {fileID: 0}
     - target: {fileID: 1919749165940908752, guid: e8622fa84fbcdc04ea6979730d526433, type: 3}
       propertyPath: m_LocalPosition.y
@@ -530,7 +534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1919749165940908752, guid: e8622fa84fbcdc04ea6979730d526433, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.0240002
+      value: -3.02
       objectReference: {fileID: 0}
     - target: {fileID: 1919749165940908752, guid: e8622fa84fbcdc04ea6979730d526433, type: 3}
       propertyPath: m_LocalRotation.w
@@ -594,8 +598,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a49361d7df73b41803131780778593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 5
-  returnSpeed: 2
+  rotationSpeed: 1
+  returnSpeed: 5
 --- !u!65 &3657492718585784890
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -642,7 +646,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 5
+  m_AngularDrag: 100
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -651,14 +655,14 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 46
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!4 &3422652508854522017 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1919749165940908752, guid: e8622fa84fbcdc04ea6979730d526433, type: 3}
@@ -776,6 +780,10 @@ PrefabInstance:
     - target: {fileID: 2461230518713317853, guid: a3fbd7c57f120a641950cf5e59de5704, type: 3}
       propertyPath: throwForce
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2461230518713317853, guid: a3fbd7c57f120a641950cf5e59de5704, type: 3}
+      propertyPath: respawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2461230518713317853, guid: a3fbd7c57f120a641950cf5e59de5704, type: 3}
       propertyPath: ThrowableObject
@@ -947,9 +955,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4422956358414476112, guid: d2109056704c39c47b4399355ab52e0a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6817880856111843689}
-    - targetCorrespondingSourceObject: {fileID: 4422956358414476112, guid: d2109056704c39c47b4399355ab52e0a, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4157734663983622516}
     - targetCorrespondingSourceObject: {fileID: 4422956358414476112, guid: d2109056704c39c47b4399355ab52e0a, type: 3}
       insertIndex: -1
@@ -960,18 +965,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4422956358414476112, guid: d2109056704c39c47b4399355ab52e0a, type: 3}
   m_PrefabInstance: {fileID: 7636199364323384020}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6817880856111843689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6095698523931982212}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbb28c5bb5b039b45ae3bc21e46d0f1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &4157734663983622516
 BoxCollider:
   m_ObjectHideFlags: 0

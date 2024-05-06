@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class ActivateDumpsterTrap : MonoBehaviour
 {
-    // When receiving a message "Activate", activates the children of the object with component Move
+    public GameObject[] dumpsters;
+    // When receiving a message "Activate", activates the children of the object with component Move    
     public void ActivateTrap()
     {
-        foreach (Transform child in transform)
+        // for each dumpster in dumpsters
+        foreach (GameObject dumpster in dumpsters)
         {
-            Move move = child.GetComponent<Move>();
-            move.ChangeDirection();
+            // if the dumpster has a Move component
+            if (dumpster.GetComponent<Move>())
+            {
+                // activate the dumpster
+                dumpster.GetComponent<Move>().ChangeDirection();
+            }
         }
     }
 

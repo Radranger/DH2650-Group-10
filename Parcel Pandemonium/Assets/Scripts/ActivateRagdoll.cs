@@ -8,6 +8,8 @@ public class ActivateRagdoll : MonoBehaviour
     private Vector3[] currentPositions;
     private Vector3[] currentRotations;
     private Rigidbody[] ragdollRigidbodies;
+
+
     // when colliding with an object, activate the ragdoll
 
     private void Start() {

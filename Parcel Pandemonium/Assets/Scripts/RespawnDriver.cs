@@ -13,6 +13,7 @@ public class RespawnDriver : MonoBehaviour
     // respawn the player after a certain amount of time
     public void Respawn(Vector3[] currentPositions, Vector3[] currentRotations)
     {
+        gameObject.transform.GetChild(0).GetComponent<followParent>().enabled = false;
         StartCoroutine(RespawnCoroutine(currentPositions, currentRotations));
     }
     private IEnumerator RespawnCoroutine(Vector3[] currentPositions, Vector3[] currentRotations)
@@ -33,5 +34,6 @@ public class RespawnDriver : MonoBehaviour
         hips.transform.localRotation = Quaternion.Euler(0,0,0);
         veichle.transform.localPosition = new Vector3(0f,0f,-6f);
         veichle.transform.localRotation = Quaternion.Euler(-90,0,0);
+        gameObject.transform.GetChild(0).GetComponent<followParent>().enabled = true;
     }
 }
