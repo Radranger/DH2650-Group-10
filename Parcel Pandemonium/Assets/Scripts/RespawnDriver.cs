@@ -10,6 +10,9 @@ public class RespawnDriver : MonoBehaviour
     public GameObject hips;
     public GameObject veichle;
 
+    public PizzaHealth pizzaHealth; // Reference to PizzaHealth script
+
+
     // respawn the player after a certain amount of time
     public void Respawn(Vector3[] currentPositions, Vector3[] currentRotations)
     {
@@ -25,6 +28,8 @@ public class RespawnDriver : MonoBehaviour
             ragdollRigidbodies[i].isKinematic = true;
             ragdollRigidbodies[i].transform.position = currentPositions[i];
             ragdollRigidbodies[i].transform.rotation = Quaternion.Euler(currentRotations[i]);
+            ragdollRigidbodies[i].transform.localScale = Vector3.one;
+
         }
         gameObject.GetComponent<PlayerMovement>().enabled = true;
         // set player position to center of game object
@@ -35,5 +40,11 @@ public class RespawnDriver : MonoBehaviour
         veichle.transform.localPosition = new Vector3(0f,0f,-6f);
         veichle.transform.localRotation = Quaternion.Euler(-90,0,0);
         gameObject.transform.GetChild(0).GetComponent<followParent>().enabled = true;
+
+        // Reset the hasCollided flag in PizzaHealth script
+        if (pizzaHealth != null)
+        {
+            pizzaHealth.ResetCollisionFlag();
+        }
     }
 }
