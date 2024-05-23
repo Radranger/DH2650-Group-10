@@ -9,6 +9,7 @@ public class ActivateRagdoll : MonoBehaviour
     private Vector3[] currentRotations;
     private Rigidbody[] ragdollRigidbodies;
 
+    public PizzaHealth pizzaHealth; // Reference to PizzaHealth script
 
     // when colliding with an object, activate the ragdoll
 
@@ -39,6 +40,12 @@ public class ActivateRagdoll : MonoBehaviour
             rb.isKinematic = false;
             gameObject.GetComponent<PlayerMovement>().enabled = false;
         }
+
+        if (pizzaHealth != null)
+        {
+            pizzaHealth.TakeDamage(1);
+        }
+
         gameObject.GetComponent<RespawnDriver>().Respawn(currentPositions, currentRotations);
     }
 }
