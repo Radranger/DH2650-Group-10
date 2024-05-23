@@ -119,4 +119,20 @@ public class ScoreManager : MonoBehaviour
         previousTemperature = pizzaTemperature; // Reset previous temperature
         UpdateUIText();
     }
+
+    public void EndGame()
+    {
+        isGameOver = true;
+        if (finalScoreDisplay != null)
+        {
+            finalScoreDisplay.DisplayFinalScore(playerScore);
+        }
+
+        // Disable player movement
+        PlayerMovement playerMovement = FindObjectOfType<PlayerMovement>();
+        if (playerMovement != null)
+        {
+            playerMovement.DisableMovement();
+        }
+    }
 }
