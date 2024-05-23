@@ -5,7 +5,6 @@ using UnityEngine;
 public class ScooterAudio : MonoBehaviour
 {
     private AudioSource AS;
-    private Rigidbody RB;
 
     public float minSpeed;
     public float maxSpeed;
@@ -18,18 +17,18 @@ public class ScooterAudio : MonoBehaviour
     void Start()
     {
         AS = GetComponent<AudioSource>();
-        RB = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        ScooterSound();
+        float verticalInput = Input.GetAxis("Vertical");
+        ScooterSound(verticalInput);
     }
 
-    void ScooterSound()
+    void ScooterSound(float input)
     {
-        currentSpeed = RB.velocity.magnitude;
-        scooterPitch = RB.velocity.magnitude / 5f;
+        currentSpeed = input;
+        scooterPitch = currentSpeed / 2f;
 
         if(currentSpeed < minSpeed){
             AS.pitch = minPitch;
