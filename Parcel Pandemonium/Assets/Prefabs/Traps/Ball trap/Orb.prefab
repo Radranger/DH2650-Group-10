@@ -46,7 +46,9 @@ GameObject:
   - component: {fileID: 103308232423542097}
   - component: {fileID: 729200044948335118}
   - component: {fileID: 4534264366128379160}
+  - component: {fileID: 171828796499281079}
   - component: {fileID: 1875976946447239940}
+  - component: {fileID: 6444192492544204164}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -179,6 +181,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83708c0a49eeb4048a9ab91ba86bc871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &171828796499281079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039365278254176773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe6c13bb72625c44977469de8b61485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffect: {fileID: 4914716930404006884, guid: aed12c224fbc8704d8eaa07a52e88f44, type: 3}
+  explosionForce: 10
+  explosionRadius: 15
 --- !u!82 &1875976946447239940
 AudioSource:
   m_ObjectHideFlags: 0
@@ -275,3 +292,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6444192492544204164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039365278254176773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd99e8e92dbee24cb316601a915a20a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 8
