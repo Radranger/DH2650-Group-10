@@ -19,6 +19,8 @@ public class PizzaHealth : MonoBehaviour
 
     // Reference to the ScoreManager script
     public ScoreManager scoreManager;
+    public GameOver gameOver; // Reference to the GameOver script
+
 
     private void Start()
     {
@@ -101,7 +103,17 @@ public class PizzaHealth : MonoBehaviour
 
     private IEnumerator RestartGame()
     {
+        if (gameOver != null)
+        {
+            gameOver.Setup(); // Show game over screen
+        }
+
         yield return new WaitForSeconds(5); // Wait for 5 seconds before restarting
+
+         if (gameOver != null)
+        {
+            gameOver.Hide(); // Hide game over screen
+        }
 
         // Reset the game state
         pizzas = maxpizzas;
