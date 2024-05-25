@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 243502310498697890}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.4, y: 28.90547, z: 7.7}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -73,6 +73,7 @@ MonoBehaviour:
   spawnLocations:
   - {fileID: 8205821709676772998}
   - {fileID: 7102297386775365076}
+  resetTime: 9
 --- !u!114 &4825141921612788585
 MonoBehaviour:
   m_ObjectHideFlags: 0
