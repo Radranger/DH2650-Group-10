@@ -5,6 +5,7 @@ using UnityEngine;
 public class touchPlayerAndExplode : MonoBehaviour
 {
     public GameObject explosionEffect;
+    public AudioSource explosionSound;
 
     public float explosionForce = 700f;
     public float explosionRadius = 15f;
@@ -21,6 +22,7 @@ public class touchPlayerAndExplode : MonoBehaviour
     public void Explode()
     {   
         GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);
+        explosionSound.Play();
         Destroy(explosion, 3f);
         Destroy(gameObject);
 
