@@ -108,7 +108,7 @@ public class PizzaHealth : MonoBehaviour
             gameOver.Setup(); // Show game over screen
         }
 
-        yield return new WaitForSeconds(5); // Wait for 5 seconds before restarting
+        yield return new WaitForSeconds(10); // Wait for 5 seconds before restarting
 
          if (gameOver != null)
         {
