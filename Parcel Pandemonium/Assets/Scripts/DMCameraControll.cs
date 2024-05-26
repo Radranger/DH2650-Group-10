@@ -6,44 +6,35 @@ public class DMCameraControll : MonoBehaviour
 {
     public Camera[] cameras;
     private int currentCamera = 0;
-    void Update()
-    {
-        //change camera when pressing numpad keys
-        if (Input.GetKeyDown(KeyCode.Keypad7))
-        {
+
+    public void ChangeCameraRight(){
+        if(currentCamera == cameras.Length - 1){
             currentCamera = 0;
+        }else{
+            currentCamera++;
         }
-        if (Input.GetKeyDown(KeyCode.Keypad8))
+
+        //change camera
+        for (int i = 0; i < cameras.Length; i++)
         {
-            currentCamera = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad9))
-        {
-            currentCamera = 2;
-        }
-        //change camera when pressing gamepad buttons
-        if (Input.GetKeyDown(KeyCode.JoystickButton4))
-        {   
-            if (currentCamera > 0)
+            if (i == currentCamera)
             {
-                currentCamera--;
+                cameras[i].enabled = true;
             }
             else
             {
-                currentCamera = 2;
+                cameras[i].enabled = false;
             }
         }
-        if (Input.GetKeyDown(KeyCode.JoystickButton5))
-        {
-            if (currentCamera < 2)
-            {
-                currentCamera++;
-            }
-            else
-            {
-                currentCamera = 0;
-            }
+    }
+
+    public void ChangeCameraLeft(){
+        if(currentCamera == 0){
+            currentCamera = cameras.Length - 1;
+        }else{
+            currentCamera--;
         }
+
         //change camera
         for (int i = 0; i < cameras.Length; i++)
         {
