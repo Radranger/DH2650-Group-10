@@ -19,7 +19,7 @@ public class GameOver : MonoBehaviour
 
     public void RestarButton()
     {
-        SceneManager.LoadScene("Demo Map");
+        SceneManager.LoadScene("Map expansion");
     }
 
 }
