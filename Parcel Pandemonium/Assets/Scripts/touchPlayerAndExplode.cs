@@ -29,7 +29,8 @@ public class touchPlayerAndExplode : MonoBehaviour
         foreach (Collider nearbyObject in colliders)
         {
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-            if (rb != null)
+            Debug.Log(nearbyObject.tag);
+            if (rb != null && nearbyObject.tag != "orb")
             {
                 rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
             }
