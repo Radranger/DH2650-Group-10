@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DMCameraControll : MonoBehaviour
 {
-    public GameObject[] cameras;
+    public Camera[] cameras;
     private int currentCamera = 0;
 
     public void ChangeCameraRight(){
@@ -19,11 +19,11 @@ public class DMCameraControll : MonoBehaviour
         {
             if (i == currentCamera)
             {
-                cameras[i].SetActive(true);
+                cameras[i].enabled = true;
             }
             else
             {
-                cameras[i].SetActive(false);
+                cameras[i].enabled = false;
             }
         }
     }
@@ -40,11 +40,11 @@ public class DMCameraControll : MonoBehaviour
         {
             if (i == currentCamera)
             {
-                cameras[i].SetActive(true);
+                cameras[i].enabled = true;
             }
             else
             {
-                cameras[i].SetActive(false);
+                cameras[i].enabled = false;
             }
         }
     }
