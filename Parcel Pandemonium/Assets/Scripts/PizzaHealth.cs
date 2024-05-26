@@ -12,7 +12,7 @@ public class PizzaHealth : MonoBehaviour
     public Sprite fullPizza;
     public Image[] pizzaStack;
     private bool hasCollided = false; // Flag to track if collision has occurred
-    private bool isGameOver = false;
+    public bool isGameOver = false;
 
     public PlayerMovement playerMovement;
     public Vector3 initialPlayerPosition; // Initial position of the player
@@ -32,7 +32,7 @@ public class PizzaHealth : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         for (int i = 0; i < pizzaStack.Length; i++)
         {
@@ -79,7 +79,7 @@ public class PizzaHealth : MonoBehaviour
         // Deduct points from the score directly in PizzaHealth
         if (scoreManager != null)
         {
-            scoreManager.playerScore -= 10 * amount;
+            scoreManager.playerScore -= 10;
 
             if (scoreManager.playerScore < 0)
             {
@@ -108,7 +108,7 @@ public class PizzaHealth : MonoBehaviour
             gameOver.Setup(); // Show game over screen
         }
 
-        yield return new WaitForSeconds(5); // Wait for 5 seconds before restarting
+        yield return new WaitForSeconds(10); // Wait for 5 seconds before restarting
 
          if (gameOver != null)
         {

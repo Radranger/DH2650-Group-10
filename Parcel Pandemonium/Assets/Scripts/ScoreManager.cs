@@ -7,15 +7,14 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public int playerScore;
-    public int pizzaTemperature = 250; // Start with hot pizza at 250
+    public int pizzaTemperature = 80; // Start with hot pizza at 80
     private int previousTemperature;
-    public float timeElapsed = 0f;
-    public float temperatureUpdateTime = 2f; // Update temperature every 2 seconds
+    public float timeElapsed;
+    public int gameTime;
+    public float temperatureUpdateTime; // Update temperature
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI temperatureText;
-    public int totalPizzas;
-    private int pizzasDelivered = 0;
     private bool isGameOver = false;
 
     public FinalScoreDisplay finalScoreDisplay;
@@ -23,6 +22,7 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         previousTemperature = pizzaTemperature;
+        temperatureUpdateTime = (gameTime / pizzaTemperature);
         UpdateUIText();
     }
 
@@ -50,24 +50,6 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void DeliverPizza()
-    {
-        playerScore += 10;
-        pizzasDelivered++;
-
-        UpdateUIText();
-
-        if (pizzasDelivered >= totalPizzas)
-        {
-            isGameOver = true;
-
-            if (finalScoreDisplay != null)
-            {
-                finalScoreDisplay.DisplayFinalScore(playerScore);
-            }
-        }
-    }
-
     private void AdjustScoreForTemperatureChange()
     {
         int temperaturePoints = GetTemperaturePoints(pizzaTemperature);
@@ -82,20 +64,25 @@ public class ScoreManager : MonoBehaviour
 
     private int GetTemperaturePoints(int temperature)
     {
-        if (temperature >= 200)
+        if (temperature >= 60)
         {
             // Hot pizza
             return 0;
         }
-        else if (temperature >= 100)
+        else if (temperature >= 40)
         {
             // Warm pizza
-            return -10;
+            return -20;
+        }
+        else if (temperature >= 20)
+        {
+            // Warm pizza
+            return -40;
         }
         else
         {
             // Cold pizza
-            return -20;
+            return -60;
         }
     }
 
@@ -115,7 +102,7 @@ public class ScoreManager : MonoBehaviour
     public void ResetGame()
     {
         playerScore = 100; // Reset score to initial state
-        pizzaTemperature = 250; // Reset temperature to initial state
+        pizzaTemperature = 80; // Reset temperature to initial state
         previousTemperature = pizzaTemperature; // Reset previous temperature
         UpdateUIText();
     }
