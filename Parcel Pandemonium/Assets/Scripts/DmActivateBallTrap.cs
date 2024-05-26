@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DmActivateBallTrap : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class DmActivateBallTrap : MonoBehaviour
     public GameObject[] objectsToActivate;
     public GameObject[] spawnLocations;
     public float resetTime = 9f;
+    public Button button;
 
     private bool activated = true;
 
@@ -17,6 +19,9 @@ public class DmActivateBallTrap : MonoBehaviour
         {
             return;
         }
+        
+        // set button to disabled
+        button.interactable = false;
 
         foreach (GameObject obj in objectsToActivate)
         {
@@ -45,6 +50,7 @@ public class DmActivateBallTrap : MonoBehaviour
     IEnumerator StopActivation()
     {
         yield return new WaitForSeconds(resetTime);
+        button.interactable = true;
         activated = true;
     }
 }

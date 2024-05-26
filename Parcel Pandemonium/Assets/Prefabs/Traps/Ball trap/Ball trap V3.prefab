@@ -74,6 +74,7 @@ MonoBehaviour:
   - {fileID: 8205821709676772998}
   - {fileID: 7102297386775365076}
   resetTime: 9
+  button: {fileID: 0}
 --- !u!114 &4825141921612788585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c39f0a08831b3347a2a316549d3ab40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightRotation: 0.9
+  rightRotation: 0.999
   leftRotation: -0.2
   stopLeftRotation: 0
   stopRightRotation: 0
