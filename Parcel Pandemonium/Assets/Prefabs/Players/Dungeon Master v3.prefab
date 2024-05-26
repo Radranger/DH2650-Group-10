@@ -743,7 +743,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4569019618913273413}
   - {fileID: 8089356606529327891}
   m_Father: {fileID: 3824454483690777503}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1020,7 +1019,7 @@ GameObject:
   - component: {fileID: 603207750231070880}
   - component: {fileID: 4757003181311433947}
   m_Layer: 0
-  m_Name: Camera Panel (1)
+  m_Name: Steering arrows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1040,12 +1039,12 @@ RectTransform:
   m_Children:
   - {fileID: 8598083279412351813}
   - {fileID: 8807668158728377052}
-  m_Father: {fileID: 7974847081734597516}
+  m_Father: {fileID: 3824454483690777503}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: 56}
-  m_SizeDelta: {x: 78.499985, y: -362.5}
+  m_AnchoredPosition: {x: -68.99999, y: -161.00002}
+  m_SizeDelta: {x: -846.5, y: -850}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &603207750231070880
 CanvasRenderer:
@@ -1860,6 +1859,7 @@ RectTransform:
   - {fileID: 4858440266263626954}
   - {fileID: 6561750599310517312}
   - {fileID: 5214739168825091109}
+  - {fileID: 4569019618913273413}
   - {fileID: 7974847081734597516}
   - {fileID: 2712982520029344715}
   m_Father: {fileID: 3828200410427359461}

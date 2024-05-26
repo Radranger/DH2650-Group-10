@@ -8,10 +8,12 @@ public class DMRotationControls : MonoBehaviour
     public float leftRotation;
     public bool stopLeftRotation = false;
     public bool stopRightRotation = false;
+    public bool rotateRight = false;
+    public bool rotateLeft = false;
+
     // Allow the user to rotate around the y axis with the arrow keys
     void Update()
     {   
-        Debug.Log("Rotation: " + transform.rotation.y);
         // If Rotation is above rightRotation, stop rotation
         if (transform.localRotation.y > rightRotation)
         {
@@ -31,20 +33,35 @@ public class DMRotationControls : MonoBehaviour
             stopLeftRotation = false;
         }
 
-        if (!stopLeftRotation)
+        if (!stopRightRotation && rotateRight)
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                transform.Rotate(Vector3.up, -1);
-            }
-        }
-        if (!stopRightRotation)
-        {
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                transform.Rotate(Vector3.up, 1);
-            }
+            transform.Rotate(Vector3.up, 1);   
         }
 
+        if (!stopLeftRotation && rotateLeft)
+        {
+            transform.Rotate(Vector3.up, -1);
+        }
+    }
+
+    public void RotateLeft(){
+        if (!stopLeftRotation)
+        {
+            rotateLeft = true;
+        }
+    }
+
+    public void RotateRight(){
+        if (!stopRightRotation)
+        {
+            rotateRight = true;
+        }
+    }
+
+    public void StopRotation(){
+        Debug.Log("Stop Rotation");
+        rotateRight = false;
+        rotateLeft = false;
     }
 }
+

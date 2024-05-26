@@ -9,7 +9,7 @@ public class StartLevel : MonoBehaviour
     public Toggle DriverToggle;
 
     public Canvas driverTestPhaseCanvas;
-    public Canvas driverPlayPhaseCanvas;
+    public GameObject driverPlayPhaseCanvas;
 
     public GameObject driverPlayer;
     public GameObject driverStartPoint;

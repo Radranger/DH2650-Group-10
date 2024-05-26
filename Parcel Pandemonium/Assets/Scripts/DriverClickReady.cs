@@ -6,12 +6,23 @@ using UnityEngine.UI;
 public class DriverClickReady : MonoBehaviour
 {
     public Toggle Toggle;
-    // Set togggle to ready when space has been pressed
+
+    private bool hasBeenClicked = false;
+    // Set togggle to ready when A on the gamepad or space is pressed
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
+    {   
+
+
+        if ((Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space)) && !hasBeenClicked)
         {
-            Toggle.isOn = !Toggle.isOn;
+            Debug.Log("A button pressed");
+            Toggle.isOn = true;
+            hasBeenClicked = true;
+        }
+        else if ((Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space)) && hasBeenClicked)
+        {
+            Toggle.isOn = false;
+            hasBeenClicked = false;
         }
     }
 }
