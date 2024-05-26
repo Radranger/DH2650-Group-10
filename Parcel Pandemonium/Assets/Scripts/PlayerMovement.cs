@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSpeed = 10f;
     private Vector3 initialPosition; // Store the initial position of the player
     private bool isMovementEnabled = true; // Flag to enable/disable movement
-
+    public float maxAngle = 20f;
 
     void Start()
     {
@@ -28,6 +28,12 @@ public class PlayerMovement : MonoBehaviour
 
             float rotationInput = horizontalInput * speed * Time.deltaTime * rotationSpeed;
             transform.Rotate(0f, rotationInput, 0f);
+
+            // Stop the player from falling over
+            if (transform.rotation.z > maxAngle || transform.rotation.z < -maxAngle)
+            {
+                transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
+            }
         }
     }
 
