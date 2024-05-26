@@ -8,6 +8,9 @@ public class PizzaHealth : MonoBehaviour
     public int pizzas;
     public int maxpizzas;
 
+    public AudioSource gameOverSound;
+    public AudioSource music;
+
     public Sprite emptyPizza;
     public Sprite fullPizza;
     public Image[] pizzaStack;
@@ -105,6 +108,8 @@ public class PizzaHealth : MonoBehaviour
     {
         if (gameOver != null)
         {
+            music.Stop();
+            gameOverSound.Play();
             gameOver.Setup(); // Show game over screen
         }
 

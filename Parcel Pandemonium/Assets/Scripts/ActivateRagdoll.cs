@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ActivateRagdoll : MonoBehaviour
 {   
+    public AudioSource crashSound;
     public GameObject playerRig;
     private Vector3[] currentPositions;
     private Vector3[] currentRotations;
@@ -28,24 +29,27 @@ public class ActivateRagdoll : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) {
         Debug.Log("Collision detected");
-        ragdollRigidbodies = playerRig.GetComponentsInChildren<Rigidbody>();
-        for (int i = 0; i < ragdollRigidbodies.Length; i++)
-        {
-            currentPositions[i] = ragdollRigidbodies[i].transform.position;
-            currentRotations[i] = ragdollRigidbodies[i].transform.rotation.eulerAngles;
-        }
-        // Activate the ragdoll by enabling all Rigidbody components in the hierarchy
-        foreach (Rigidbody rb in ragdollRigidbodies)
-        {
-            rb.isKinematic = false;
-            gameObject.GetComponent<PlayerMovement>().enabled = false;
-        }
+        if(other.tag != "Finish"){
+            crashSound.Play();
+            ragdollRigidbodies = playerRig.GetComponentsInChildren<Rigidbody>();
+            for (int i = 0; i < ragdollRigidbodies.Length; i++)
+            {
+                currentPositions[i] = ragdollRigidbodies[i].transform.position;
+                currentRotations[i] = ragdollRigidbodies[i].transform.rotation.eulerAngles;
+            }
+            // Activate the ragdoll by enabling all Rigidbody components in the hierarchy
+            foreach (Rigidbody rb in ragdollRigidbodies)
+            {
+                rb.isKinematic = false;
+                gameObject.GetComponent<PlayerMovement>().enabled = false;
+            }
 
-        if (pizzaHealth != null)
-        {
-            pizzaHealth.TakeDamage(1);
-        }
+            if (pizzaHealth != null)
+            {
+                pizzaHealth.TakeDamage(1);
+            }
 
-        gameObject.GetComponent<RespawnDriver>().Respawn(currentPositions, currentRotations);
+            gameObject.GetComponent<RespawnDriver>().Respawn(currentPositions, currentRotations);
+        }
     }
 }
