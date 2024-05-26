@@ -8,6 +8,7 @@ public class FinalScoreDisplay : MonoBehaviour
 {
     public GameObject scoreboardPanel;
     public TextMeshProUGUI finalScoreText;
+    public TextMeshProUGUI finalScoreTextDM;
 
     private void Start()
     {
@@ -25,7 +26,8 @@ public class FinalScoreDisplay : MonoBehaviour
 
             if (finalScoreText != null)
             {
-                finalScoreText.text = "Final Score: " + finalScore.ToString();
+                finalScoreText.text = "Player Score: " + finalScore.ToString();
+                finalScoreTextDM.text = "DM Score: " + (100 - finalScore).ToString();
             }
         }
     }
