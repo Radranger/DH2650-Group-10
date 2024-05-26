@@ -14,6 +14,8 @@ public class StartLevel : MonoBehaviour
     public GameObject driverPlayer;
     public GameObject driverStartPoint;
 
+    public Canvas scoreCanvas;
+
     private Toggle DMToggle;
 
     void Start()
@@ -32,6 +34,7 @@ public class StartLevel : MonoBehaviour
             ChangePlayerPosition();
             DriverToggle.isOn = false;
             DMToggleGameObject.SetActive(false);
+            driverPlayer.GetComponent<PizzaHealth>().scoreManager = FindObjectOfType<ScoreManager>();
         }
     }
 

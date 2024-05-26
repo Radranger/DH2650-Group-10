@@ -11,8 +11,6 @@ public class DriverClickReady : MonoBehaviour
     // Set togggle to ready when A on the gamepad or space is pressed
     void Update()
     {   
-
-
         if ((Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space)) && !hasBeenClicked)
         {
             Debug.Log("A button pressed");
